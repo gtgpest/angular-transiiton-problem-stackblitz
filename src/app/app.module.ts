@@ -15,7 +15,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     Page2Component
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {      
+      scrollPositionRestoration: 'enabled'
+  }),
     RouterOutlet,
     BrowserModule,
     BrowserAnimationsModule,
