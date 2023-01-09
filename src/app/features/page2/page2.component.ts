@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Router} from "@angular/router";
+import { Location } from "@angular/common";
 import {path} from "../../common/routes";
 
 @Component({
@@ -9,10 +10,10 @@ import {path} from "../../common/routes";
 })
 export class Page2Component {
 
-  constructor(private _router: Router) {
+  constructor(private _location: Location) {
   }
 
   go() {
-    this._router.navigate([`/${path.Page1}`]).then();
+    this._location.back();
   }
 }
