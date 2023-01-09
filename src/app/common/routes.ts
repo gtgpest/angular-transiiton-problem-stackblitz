@@ -5,7 +5,6 @@ import {Page2Component} from "../features/page2/page2.component";
 export const enum path {
   Page1 = "page1",
   Page2 = "page2",
-
 }
 
 export const routes: Route[] = [
