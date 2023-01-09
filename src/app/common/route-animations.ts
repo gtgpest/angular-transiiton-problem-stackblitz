@@ -7,10 +7,33 @@ import {
   trigger,
 } from "@angular/animations";
 
+const _trigger = "routeAnimations";
 
-export const slideInAnimation = trigger("routeAnimations", [
+export const fadeAnimation = trigger(_trigger, [
+  transition("* => *", [
+    query(":enter", [style({ opacity: 0, position: "absolute", width: "100%" })], {
+      optional: true,
+    }),
+    query(":leave", [style({ opacity: 1, position: "absolute", width: "100%" })], {
+      optional: true,
+    }),
+  query(
+    ":leave",
+    [animate("0.4s", style({ opacity: 0 }))],
+    { optional: true }
+  ),
+  query(
+    ":enter",
+    [animate("0.4s", style({ opacity: 1 }))],
+    { optional: true }
+  ),   
+  ]),
+]);
+
+
+export const slideAnimation = trigger(_trigger, [
   transition("page1 => page2", [
-    query(":enter, :leave", style({position: "fixed", width: "100%"}), {
+    query(":enter, :leave", style({position: "absolute", width: "100%"}), {
       optional: true,
     }),
     group([
@@ -36,7 +59,7 @@ export const slideInAnimation = trigger("routeAnimations", [
     ]),
   ]),
   transition("page2 => page1", [
-    query(":enter, :leave", style({position: "fixed", width: "100%"}), {
+    query(":enter, :leave", style({position: "absolute", width: "100%"}), {
       optional: true,
     }),
     group([

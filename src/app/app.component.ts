@@ -1,12 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {ChildrenOutletContexts, Router} from "@angular/router";
-import {slideInAnimation} from "./common/route-slide.animation";
+import { fadeAnimation, slideAnimation } from './common/route-animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations: [slideInAnimation]
+  //animations: [slideAnimation]
+  animations: [fadeAnimation]
 })
 export class AppComponent implements OnInit{
 
