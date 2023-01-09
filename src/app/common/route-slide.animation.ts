@@ -10,7 +10,7 @@ import {
 
 export const slideInAnimation = trigger("routeAnimations", [
   transition("page1 => page2", [
-    query(":enter, :leave", style({position: "absolute", width: "100%"}), {
+    query(":enter, :leave", style({position: "fixed", width: "100%"}), {
       optional: true,
     }),
     group([
@@ -36,7 +36,7 @@ export const slideInAnimation = trigger("routeAnimations", [
     ]),
   ]),
   transition("page2 => page1", [
-    query(":enter, :leave", style({position: "absolute", width: "100%"}), {
+    query(":enter, :leave", style({position: "fixed", width: "100%"}), {
       optional: true,
     }),
     group([
